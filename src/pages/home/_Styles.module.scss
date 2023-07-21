@@ -1,0 +1,32 @@
+.home__view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  color: #fff;
+
+  background: rgb(35, 54, 107);
+  background: radial-gradient(
+    circle,
+    rgba(35, 54, 107, 1) 0%,
+    rgba(17, 24, 39, 1) 100%
+  );
+
+  h3 {
+    font-size: 3.5rem;
+  }
+  p {
+    color: #faddfa;
+    margin: 1rem 0 2rem ;
+    font-size: 1.5rem;
+  }
+  a{
+    transition: all ease-in-out 0.2s;
+    &:hover{
+      scale: 110%;
+    }
+  }
+}

@@ -8,8 +8,12 @@ import Layout from "../components/layout/Layout";
 const RouteApp = () => {
   return (
     <BrowserRouter>
+      <main>
+        <Routes>
+          <Route index element={<HomeView />} />
+        </Routes>
+      </main>
       <Routes>
-        <Route index element={<HomeView />} />
         <Route element={<Layout />}>
           <Route path="/item1/*" element={<Item1View />} />
           <Route path="/item2/*" element={<Item2View />} />
