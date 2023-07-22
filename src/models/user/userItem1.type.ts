@@ -6,7 +6,7 @@ export interface IUserItem1 extends IPerson {
 
 export const SChemaUserItem1 = yup
   .object({
-    name: yup.string().max(40).required("El nombre es requerido"),
+    name: yup.string().max(40, "El nombre superar los 40 caracteres").required("El nombre es requerido"),
     email: yup
       .string()
       .email("El correo ingresado es invalido")
