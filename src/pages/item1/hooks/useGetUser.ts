@@ -15,11 +15,12 @@ const useGetUser = () => {
   const filterUserHandler = ({
     target,
   }: React.ChangeEvent<HTMLInputElement>) => {
+    const value = target.value.toLowerCase();
     const userResultFilter = users.filter(
       (user) =>
-        user.name.includes(target.value) ||
-        user.email.includes(target.value) ||
-        user.phone.toString().includes(target.value)
+        user.name.toLowerCase().includes(value) ||
+        user.email.toLowerCase().includes(value) ||
+        user.phone.toString().toLowerCase().toString().includes(value)
     );
     setUserFilter([...userResultFilter]);
   };
