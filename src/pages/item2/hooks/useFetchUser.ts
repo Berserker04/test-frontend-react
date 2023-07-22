@@ -1,9 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { getUsers2Service } from "../../../services/item2/item2.service";
-import {
-  IUserItem2,
-  typeOrder,
-} from "../../../models/user/userItem2.type";
+import { IUserItem2, typeOrder } from "../../../models/user/userItem2.type";
 
 const useFecthUser = () => {
   const [users, setUser] = useState<IUserItem2[]>([]);
@@ -43,7 +40,7 @@ const useFecthUser = () => {
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [getUsers]);
 
   return { filterUserHandler, usersFilter, orderUserHandler };
 };

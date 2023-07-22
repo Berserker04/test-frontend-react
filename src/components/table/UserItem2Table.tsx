@@ -21,7 +21,7 @@ const UserItem2Table = ({ users }: props) => {
       <tbody>
         {!users.length && (
           <tr>
-            <td colSpan={5}>
+            <td colSpan={7}>
               <div
                 className="alert alert-primary d-flex align-items-center w-100 text-justify justify-content-center"
                 role="alert"

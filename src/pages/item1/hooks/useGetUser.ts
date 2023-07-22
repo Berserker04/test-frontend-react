@@ -27,7 +27,7 @@ const useGetUser = () => {
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [getUsers]);
 
   return { getUsers, filterUserHandler, usersFilter };
 };
