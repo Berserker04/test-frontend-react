@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UpOrAddUserModal from "../../components/modal/UpOrAddUserModal";
-import UserTable from "../../components/table/UserTable";
+import UserTable from "../../components/table/UserItem1Table";
 import { IUserItem1 } from "../../models/user/userItem1.type";
 import useGetUser from "./hooks/useGetUser";
 

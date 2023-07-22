@@ -1,4 +1,4 @@
-interface IUserItem2 extends Omit<IPerson, "phone"> {
+export interface IUserItem2 extends Omit<IPerson, "phone"> {
   id: number;
   username: string;
   address: Address;
@@ -24,4 +24,10 @@ interface Address {
 interface Geo {
   lat: string;
   lng: string;
+}
+
+export enum typeOrder {
+  type1 = "Alfaveticamente",
+  type2 = "Ascendente",
+  type3 = "Descendente",
 }
