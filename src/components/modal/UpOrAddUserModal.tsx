@@ -1,27 +1,18 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 import { IUserItem1, SChemaUserItem1 } from "../../models/user/userItem1.type";
 import {
   registerUserService,
   updateUserByEmail,
 } from "../../services/item1/item1.service";
+import { notifyError, notifySuccess } from "../../helpers/notifyToast";
 
 interface props {
   updateTable: () => void;
   userEdit?: IUserItem1;
 }
-
-const notify = (text: string) =>
-  toast.success(text, {
-    position: "top-right",
-  });
-
-const notifyError = (text: string) =>
-  toast.error(text, {
-    position: "top-right",
-  });
 
 const UpOrAddUserModal = ({ updateTable, userEdit }: props) => {
   const {
@@ -35,11 +26,11 @@ const UpOrAddUserModal = ({ updateTable, userEdit }: props) => {
   const onSubmit = async (data: IUserItem1) => {
     if (userEdit) {
       await updateUserByEmail(data);
-      notify("Actualizado con exito!");
+      notifySuccess("Actualizado con exito!");
     } else {
       const result = await registerUserService(data);
       if (result) {
-        notify("Registrado con exito!");
+        notifySuccess("Registrado con exito!");
       } else {
         notifyError("Usuario ya registrado!");
       }
@@ -62,7 +53,7 @@ const UpOrAddUserModal = ({ updateTable, userEdit }: props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Registrar
+                {userEdit ? "Actualizar" : "Registrar"}
               </h1>
               <button
                 type="button"
