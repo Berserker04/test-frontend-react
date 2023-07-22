@@ -1,21 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
-
-const titleNavBar: Record<string, string> = {
-  "/item1": "Crud de usuarios",
-  "/item2": "Tabla de usuarios",
-};
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  const { pathname } = useLocation();
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary bg-dark"
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <a className="navbar-brand fs-3 mr-5 w10" href="#">
-          {titleNavBar[pathname]}
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,21 +19,21 @@ const NavBar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse ml-1" id="navbarText">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 justify-content-center">
             <li className="nav-item">
-              <Link className="nav-link fs-4" aria-current="page" to={"/"}>
+              <NavLink className="nav-link fs-4" aria-current="page" to={"/"}>
                 Inicio
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-4" to={"/item1"}>
+              <NavLink className="nav-link fs-4" to={"/item1"}>
                 Item 1
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-4" to={"/item2"}>
+              <NavLink className="nav-link fs-4" to={"/item2"}>
                 Item 2
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
