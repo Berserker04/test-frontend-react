@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 
 import { IUserItem1 } from "../../models/user/userItem1.type";
 import { deleteUserByEmail } from "../../services/item1/item1.service";
-import { notifyError, notifySuccess } from "../../helpers/notifyToast";
+import { notifySuccess } from "../../helpers/notifyToast";
 
 interface props {
   users: IUserItem1[];
